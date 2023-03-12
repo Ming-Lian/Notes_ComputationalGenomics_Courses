@@ -84,9 +84,9 @@ class TrieMap(object):
 
 ## 2.1. How can we build a trie containing all suffixes of a text T
 
-First add special terminal character $ to the end of T
+First add special terminal character \$ to the end of T
 
-$ is a character that does not appear elsewhere in T, and we define it to be less than other characters ($ < A < C < G < T)
+\$ is a character that does not appear elsewhere in T, and we define it to be less than other characters (\$ < A < C < G < T)
 
 ![Untitled](pictures/part1_exactmatching_3_1_07.png)
 
