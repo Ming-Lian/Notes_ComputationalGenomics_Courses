@@ -26,9 +26,7 @@ Mapping the Referee Example to Mutation Calling
 
 where
 
-$$
-\pi \mid \delta \sim \text{Dirichlet}(\delta) \\ Z_i \mid \pi\sim \text{Mutinomial}(\pi) \\ \mu_k \mid \alpha_k, \beta_k \sim \text{Beta}(\alpha_k, \beta_k) \\ x_i \mid \mu_k,Z_i=k \sim \text{Binomial}(N_i, \mu_k)
-$$
+$$\pi \mid \delta \sim \text{Dirichlet}(\delta) \\ Z_i \mid \pi\sim \text{Mutinomial}(\pi) \\ \mu_k \mid \alpha_k, \beta_k \sim \text{Beta}(\alpha_k, \beta_k) \\ x_i \mid \mu_k,Z_i=k \sim \text{Binomial}(N_i, \mu_k)$$
 
 ![Untitled](pictures/Lecture2_05.png)
 
@@ -98,9 +96,7 @@ delta.hyper <- c(8, 2, 2)
 
 - 1\. Compute the observed binomial likelihood probabilities
 
-    $$
-    P(x_i \mid Z_i=k, N_i) = \text{Bin}(x_i \mid N_i, \mu_i)
-    $$
+    $$P(x_i \mid Z_i=k, N_i) = \text{Bin}(x_i \mid N_i, \mu_i)$$
     
     This function will compute the binomial probability for the input $x_i$ at each locus $i$ and (conditioned on) each genotype $k \in \{AA, AB, BB\}$
     
@@ -138,9 +134,7 @@ delta.hyper <- c(8, 2, 2)
 
 - 1\. Compute the responsibilities in the E-Step
 
-    $$
-    \gamma(Z_i=k) = \frac{\pi_k \cdot \text{Bin}(x_i \mid N_i, \mu_k)}{\sum_{j=1}^K \pi_j \cdot \text{Bin}(x_i \mid N_i, \mu_j)}
-    $$
+    $$\gamma(Z_i=k) = \frac{\pi_k \cdot \text{Bin}(x_i \mid N_i, \mu_k)}{\sum_{j=1}^K \pi_j \cdot \text{Bin}(x_i \mid N_i, \mu_j)}$$
     
     ```r
     compute.responsibilities <- function(obs.lik, pi){
@@ -163,9 +157,7 @@ delta.hyper <- c(8, 2, 2)
         
         computes the update of $\pi_k$ given the responsibilities $\gamma(Z_i)$ from the E-Step and the hyperparameter $\delta_k$
         
-        $$
-        \hat \pi_k = \frac{\left(\sum_{i=1}^T \gamma(Z_i=k)\right) + \delta(k)-1}{\sum_{j=1}^K\left[\left(\sum_{i=1}^T \gamma(Z_i=j)\right) + \delta(j)-1\right]}
-        $$
+        $$\hat \pi_k = \frac{\left(\sum_{i=1}^T \gamma(Z_i=k)\right) + \delta(k)-1}{\sum_{j=1}^K\left[\left(\sum_{i=1}^T \gamma(Z_i=j)\right) + \delta(j)-1\right]}$$
         
         ```r
         update.pi <- function(gamma, delta){
@@ -181,9 +173,7 @@ delta.hyper <- c(8, 2, 2)
      
     - the binomial parameter $\mu_{1:K}$
         
-        $$
-        \hat \mu_k = \frac{\left(\sum_{i=1}^T \gamma(Z_i=k)x_i\right) + \alpha(k)-1}{\sum_{j=1}^K\left[\left(\sum_{i=1}^T \gamma(Z_i=j)N_i\right) + \alpha(j)-1\right]}
-        $$
+        $$\hat \mu_k = \frac{\left(\sum_{i=1}^T \gamma(Z_i=k)x_i\right) + \alpha(k)-1}{\sum_{j=1}^K\left[\left(\sum_{i=1}^T \gamma(Z_i=j)N_i\right) + \alpha(j)-1\right]}$$
         
         ```r
         update.mu <- function(gamma, x, N, alpha, beta){
@@ -203,6 +193,4 @@ delta.hyper <- c(8, 2, 2)
     
     compute the log posterior distribution
     
-    $$
-    \log \mathbb{P} = 
-    $$
+    $$\log \mathbb{P} = $$
