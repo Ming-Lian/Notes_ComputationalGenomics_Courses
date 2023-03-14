@@ -122,9 +122,7 @@ delta.hyper <- c(8, 2, 2)
 
 - 2\. Compute the log likelihood function
 
-    $$
-    P(x_{1:T} \mid N_{1:T}, \mu_{1:K}, \pi_{1:K}) \\ = \prod_{i=1}^T P(x_i \mid N_i, \mu_{1:K}, \pi_{1:K}) \\ = \prod_{i=1}^T \sum_{k=1}^K \pi_k \cdot \text{Bin}(x_i \mid N_i,\pi_k)\\ \ell = \log (P(x_{1:T} \mid N_{1:T}, \mu_{1:K}, \pi_{1:K})) \\ =  \sum_{i=1}^T \log \left( \sum_{k=1}^K \pi_k \cdot \text{Bin}(x_i \mid N_i,\pi_k)\right)
-    $$
+    $$P(x_{1:T} \mid N_{1:T}, \mu_{1:K}, \pi_{1:K}) \\ = \prod_{i=1}^T P(x_i \mid N_i, \mu_{1:K}, \pi_{1:K}) \\ = \prod_{i=1}^T \sum_{k=1}^K \pi_k \cdot \text{Bin}(x_i \mid N_i,\pi_k)\\ \ell = \log (P(x_{1:T} \mid N_{1:T}, \mu_{1:K}, \pi_{1:K})) \\ =  \sum_{i=1}^T \log \left( \sum_{k=1}^K \pi_k \cdot \text{Bin}(x_i \mid N_i,\pi_k)\right)$$
             
     ```r
     compute.loglik <- function(obs.lik, pi){
