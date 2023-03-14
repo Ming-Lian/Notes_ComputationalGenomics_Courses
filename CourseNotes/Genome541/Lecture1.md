@@ -78,9 +78,7 @@ Bayesian Statistics
 
 - Binomial likelihood model: probability of heads $\mu$
         
-    $$
-    P(x_{1:T} \mid N_{1:T}, \mu) = \prod_i^T \text{Bin}(x_i \mid N_i, \mu) 
-    $$
+    $$P(x_{1:T} \mid N_{1:T}, \mu) = \prod_i^T \text{Bin}(x_i \mid N_i, \mu) $$
     
     We can estimate this model parameter using Maximum Likelihood Estimation (**MLE**)
     
@@ -94,9 +92,7 @@ Then we get Beta-Binomial Model
 
 From the posterior, we can estimate the parameter using the maximum a posteriori (**MAP**), $\hat \mu_{\text{MAP}}$
 
-$$
-p(\mu \mid x_i ) \propto \text{Bin}(x_i \mid N_i, \mu) \cdot \text{Beta}(\mu \mid \alpha, \beta) \\ = \text{Beta}(\mu \mid x_i + \alpha, N_i - x_i + \beta) \\ \downarrow \\ \text{let } \alpha' = x_i + \alpha, \beta'=N_i - x_i + \beta \\ \downarrow \\ p(\mu \mid x_i ) \propto \text{Beta}(\mu \mid \alpha', \beta')\\ \hat \mu_{\text{MAP}} = \frac{\alpha'-1}{\alpha' + \beta' -2}
-$$
+$$p(\mu \mid x_i ) \propto \text{Bin}(x_i \mid N_i, \mu) \cdot \text{Beta}(\mu \mid \alpha, \beta) \\ = \text{Beta}(\mu \mid x_i + \alpha, N_i - x_i + \beta) \\ \downarrow \\ \text{let } \alpha' = x_i + \alpha, \beta'=N_i - x_i + \beta \\ \downarrow \\ p(\mu \mid x_i ) \propto \text{Beta}(\mu \mid \alpha', \beta')\\ \hat \mu_{\text{MAP}} = \frac{\alpha'-1}{\alpha' + \beta' -2}$$
  
 ## 3.3. Mixture models and inference using the EM algorithm
         
@@ -138,9 +134,7 @@ $$
         
         Define the likelihood for a 3-component mixture of binomials with 3 parameters, $\mu_{\text{Fair}}, \mu_{\text{Heads}}, \mu_{\text{Tails}}$, one for each type of coin
         
-        $$
-        p(x_i \mid N_i, \mu_{1:K}, \pi_{1:K}) = \sum_{k}^K \pi_k \cdot Bin(x_i \mid N_i, \mu_k)
-        $$
+        $$p(x_i \mid N_i, \mu_{1:K}, \pi_{1:K}) = \sum_{k}^K \pi_k \cdot Bin(x_i \mid N_i, \mu_k)$$
             
 - Inference & parameter estimation using EM
 
