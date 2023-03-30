@@ -26,7 +26,13 @@ Mapping the Referee Example to Mutation Calling
 
 where
 
-$$\pi \mid \delta \sim \text{Dirichlet}(\delta) \\ Z_i \mid \pi\sim \text{Mutinomial}(\pi) \\ \mu_k \mid \alpha_k, \beta_k \sim \text{Beta}(\alpha_k, \beta_k) \\ x_i \mid \mu_k,Z_i=k \sim \text{Binomial}(N_i, \mu_k)$$
+$$\pi \mid \delta \sim \text{Dirichlet}(\delta)$$
+
+$$Z_i \mid \pi\sim \text{Mutinomial}(\pi)$$
+
+$$\mu_k \mid \alpha_k, \beta_k \sim \text{Beta}(\alpha_k, \beta_k)$$
+
+$$x_i \mid \mu_k,Z_i=k \sim \text{Binomial}(N_i, \mu_k)$$
 
 ![Untitled](pictures/Lecture2_05.png)
 
