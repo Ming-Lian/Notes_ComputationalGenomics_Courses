@@ -29,3 +29,11 @@ Chapter2: Approximate matching
 - [the clever combinations of ideas: index + dynamic programming](part1_approximatematching_3.md)
 
 ## Part2: Assembly
+
+[Assembly theory](./part2_assembly_theory.md)
+
+[Assembly algorithms](./part2_assembly_algorithms.md)
+
+[Assembly in practice](./part2_assembly_practice.md)
+
+[Long reads and assembly](./part2_assembly_long_reads.md)
